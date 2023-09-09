@@ -5,8 +5,6 @@ using WebAPIClientServer.Models;
 
 namespace WebAPIClientServer.Controllers
 {
-
-
     public class PoductController : Controller
     {
         HttpClient _httpClient;
@@ -17,7 +15,7 @@ namespace WebAPIClientServer.Controllers
 
             _httpClient.BaseAddress = new Uri("https://localhost:7135/api/Product");
         }
-
+        [HttpGet]
         public ActionResult<List<Product>> Index()
         {
             List<Product> products = new List<Product>();
@@ -52,6 +50,28 @@ namespace WebAPIClientServer.Controllers
             }
             return View();
         }
+
+        [HttpGet("id")]
+        
+        public ActionResult<Product> Details(int? id)
+        {
+            Product product = new Product();
+       
+        //https://localhost:7135/api/Product?id=1006
+       // https://localhost:7135/api/Product/id?id=3
+            var request = _httpClient.GetAsync(_httpClient.BaseAddress+ "/id?id=" + id).Result;
+            if (request.IsSuccessStatusCode)
+            {
+                
+                var content = request.Content.ReadAsStringAsync().Result;
+                product = JsonConvert.DeserializeObject<Product>(content);
+                return View(product);
+            }
+            return NotFound();
+            
+           
+        }
+
 
         
         public ActionResult Edit(int? id)
@@ -90,5 +110,15 @@ namespace WebAPIClientServer.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpDelete]
+        public ActionResult Delete(int? id)
+        {
+            var request = _httpClient.DeleteAsync(_httpClient.BaseAddress + "/?id="+ id).Result;
+            if (request.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
     }
 }

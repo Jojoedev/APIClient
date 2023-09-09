@@ -27,6 +27,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9kdWN0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/Desktop/CSharp projects/WebAPIClientServer/Views/Poduct/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9kdWN0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/CSharp projects/WebAPIClientServer/Views/Poduct/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9kdWN0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/Desktop/CSharp projects/WebAPIClientServer/Views/Poduct/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9kdWN0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
